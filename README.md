@@ -17,12 +17,20 @@ This is a comprehensive house marketplace website where users can browse, sale o
 -   React
 -   TypeScript
 -   Firebase (Firestore, Authentication, Storage)
+-   Leaflet (React-Leaflet)
+-   Swiper
+-   React Toastify
 
 ## Setup
 
-1. Clone the repository
-2. Run `npm install` to install the dependencies
-3. Run `npm run dev` to start the server
+1. Clone this repository to your local machine.
+2. Run `npm install` to install the necessary dependencies.
+3. Ensure you have your own geocode API key from Google Cloud Platform.
+4. Create a `.env` file in the root directory of the project.
+5. Add the following environment variables to your `.env` file:
+    - `VITE_GEOCODE_API_KEY = "<your geocode api key here>"`
+6. Save the `.env` file.
+7. Run `npm run dev` to start the development server.
 
 ## Demo
 
