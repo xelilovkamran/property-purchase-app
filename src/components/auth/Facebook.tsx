@@ -3,14 +3,18 @@ import { FacebookAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { db } from "@/firebase.config";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 function Facebook() {
+    const navigate = useNavigate();
+
     const onFacebookClick = async () => {
         try {
             const auth = getAuth();
             const provider = new FacebookAuthProvider();
             const result = await signInWithPopup(auth, provider);
             const user = result.user;
+            console.log(user);
 
             const docRef = doc(db, "users", user.uid);
             const docSnap = await getDoc(docRef);
@@ -22,6 +26,7 @@ function Facebook() {
                     timeStamp: serverTimestamp(),
                 });
             }
+            navigate("/");
         } catch (error) {
             toast.error("Could not authorize with Facebook");
         }
