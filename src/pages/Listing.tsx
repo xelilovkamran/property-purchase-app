@@ -4,6 +4,7 @@ import { db } from "@/firebase.config";
 import { TListing } from "@/types/types";
 import { getAuth } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
+import { Icon } from "leaflet";
 import { useEffect, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -42,6 +43,12 @@ function Listing() {
 
         fetchListing();
     }, [navigate, params.listingId]);
+
+    const marker = new Icon({
+        iconUrl: "https://img.icons8.com/color/marker",
+        iconSize: [30, 35],
+    });
+    console.log(marker);
 
     if (loading) {
         return <Spinner />;
@@ -160,6 +167,7 @@ function Listing() {
                                 listing?.geolocation.lat ?? 0,
                                 listing?.geolocation.lng ?? 0,
                             ]}
+                            icon={marker}
                         >
                             <Popup>{listing?.location}</Popup>
                         </Marker>

@@ -1,9 +1,9 @@
 import facebookIcon from "@/assets/svg/facebookIcon.svg";
+import { db } from "@/firebase.config";
 import { FacebookAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
-import { db } from "@/firebase.config";
-import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Facebook() {
     const navigate = useNavigate();
