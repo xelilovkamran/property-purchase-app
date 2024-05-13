@@ -1,17 +1,14 @@
-import googleIcon from "@/assets/svg/googleIcon.svg";
-import { db } from "@/firebase.config";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import facebookIcon from "@/assets/svg/facebookIcon.svg";
+import { FacebookAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
+import { db } from "@/firebase.config";
 import { toast } from "react-toastify";
 
-function OAuth() {
-    const navigate = useNavigate();
-
-    const onGoogleClick = async () => {
+function Facebook() {
+    const onFacebookClick = async () => {
         try {
             const auth = getAuth();
-            const provider = new GoogleAuthProvider();
+            const provider = new FacebookAuthProvider();
             const result = await signInWithPopup(auth, provider);
             const user = result.user;
 
@@ -25,20 +22,22 @@ function OAuth() {
                     timeStamp: serverTimestamp(),
                 });
             }
-
-            navigate("/");
         } catch (error) {
-            toast.error("Could not authorize with Google");
+            toast.error("Could not authorize with Facebook");
         }
     };
 
     return (
         <div className="socialLogin">
-            <button className="socialIconDiv" onClick={onGoogleClick}>
-                <img src={googleIcon} alt="google" className="socialIconImg" />
+            <button className="socialIconDiv" onClick={onFacebookClick}>
+                <img
+                    src={facebookIcon}
+                    alt="facebook"
+                    className="socialIconImg"
+                />
             </button>
         </div>
     );
 }
 
-export default OAuth;
+export default Facebook;

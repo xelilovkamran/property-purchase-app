@@ -6,6 +6,7 @@ declare module "@/components/listings/ListingItem";
 declare module "@/components/shared/Spinner";
 declare module "@/components/shared/Slider";
 declare module "@/components/auth/OAuth";
+declare module "@/components/auth/Facebook";
 declare module "@/components/layout/Navbar";
 declare module "@/components/routing/PrivateRoute";
 

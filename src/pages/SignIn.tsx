@@ -1,8 +1,9 @@
 import ArrowRightIcon from "@/assets/svg/keyboardArrowRightIcon.svg?react";
 import visibilityIcon from "@/assets/svg/visibilityIcon.svg";
 import OAuth from "@/components/auth/OAuth";
+import Facebook from "@/components/auth/Facebook";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
@@ -19,6 +20,7 @@ function SignIn() {
     const { email, password } = formData;
 
     const navigate = useNavigate();
+    const location = useLocation();
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -99,10 +101,16 @@ function SignIn() {
                         flexDirection: "column",
                         justifyContent: "center",
                         alignItems: "center",
-                        gap: "1rem",
                     }}
                 >
-                    <OAuth />
+                    <p>
+                        Sign {location.pathname === "/sign-up" ? "up" : "in"}{" "}
+                        with
+                    </p>
+                    <div style={{ display: "flex" }}>
+                        <OAuth />
+                        <Facebook />
+                    </div>
                 </div>
                 <Link to="/sign-up" className="registerLink">
                     Sign Up Instead

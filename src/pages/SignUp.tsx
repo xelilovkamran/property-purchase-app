@@ -1,6 +1,7 @@
 import ArrowRightIcon from "@/assets/svg/keyboardArrowRightIcon.svg?react";
 import visibilityIcon from "@/assets/svg/visibilityIcon.svg";
 import OAuth from "@/components/auth/OAuth";
+import Facebook from "@/components/auth/Facebook";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -136,8 +137,23 @@ function SignUp() {
                         </button>
                     </div>
                 </form>
-
-                <OAuth />
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                    }}
+                >
+                    <p>
+                        Sign {location.pathname === "/sign-up" ? "up" : "in"}{" "}
+                        with
+                    </p>
+                    <div style={{ display: "flex" }}>
+                        <OAuth />
+                        <Facebook />
+                    </div>
+                </div>
 
                 <Link to="/sign-in" className="registerLink">
                     Sign In Instead
