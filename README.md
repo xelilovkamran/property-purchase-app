@@ -26,4 +26,4 @@ This is a comprehensive house marketplace website where users can browse, sale o
 
 ## Demo
 
-You can view the live demo [here](https://your-house-marketplace-website.vercel.app/)
+You can view the live demo [here](https://property-purchase-app.vercel.app/)
