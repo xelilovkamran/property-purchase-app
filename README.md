@@ -1,5 +1,9 @@
 # House Marketplace Website
 
+![Home Page](./public/project_home.png)
+
+## Description
+
 This is a comprehensive house marketplace website where users can browse, sale or rent houses. It provides a seamless experience for both buyers and sellers to connect and transact.
 
 ## Features
