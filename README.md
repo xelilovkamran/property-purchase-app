@@ -4,7 +4,7 @@
 
 ## Description
 
-This is a comprehensive house marketplace website where users can browse, sale or rent houses. It provides a seamless experience for both buyers and sellers to connect and transact.
+This is a comprehensive property purchasing website where users can browse, sale or rent houses. It provides a seamless experience for both buyers and sellers to connect and transact.
 
 ## Features
 
