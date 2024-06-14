@@ -48,7 +48,6 @@ function Listing() {
         iconUrl: "https://img.icons8.com/color/marker",
         iconSize: [30, 35],
     });
-    console.log(marker);
 
     if (loading) {
         return <Spinner />;
