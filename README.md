@@ -1,4 +1,4 @@
-# House Marketplace Website
+# Property Purchasing Website
 
 ![Home Page](./public/project_home.png)
 
